@@ -76,7 +76,7 @@ let createProcess exe args dir =
     |> CreateProcess.ensureExitCode
 
 let dotnet args dir = createProcess "dotnet" args dir
-let docker args dir = createProcess "docker" args dir
+let docker args dir = createProcess "podman" args dir
 
 let npm args dir =
     let npmPath =

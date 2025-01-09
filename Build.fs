@@ -31,7 +31,7 @@ Target.create "InstallClient" (fun _ -> run npm [ "install" ] ".")
 Target.create "StartServices" (fun _ ->
     async {
         runParallel [
-            "Docker Services", docker [ "compose"; "--project-name"; "bookstore"; "up" ] "."
+            "Docker Services", docker [ "compose"; "--project-name"; "bookstore"; "up"; "-d" ] "."
         ]
     }
     |> Async.Start)
